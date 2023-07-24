@@ -20,3 +20,207 @@ li,
 figure {
   margin: 0;
 }
+
+:root {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --main-font: Raleway;
+  --accent-font: "STIX Two Text";
+}
+
+.page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+
+/*header*/
+
+.header {
+  padding-top: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90%; /* 108px */
+  text-align: center;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-bottom: 40px;
+}
+
+.content-section {
+  padding-left: 5vi;
+  padding-right: 5vi;
+}
+
+.header__menu {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+}
+
+.header__theme-toggler {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /*КРИВЫЕ ОТСТУПЫ И ОТКУДА 6 ПКС ПАДДИНГ??????*/
+}
+
+.header__theme-button {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  color: currentColor;
+  font-size: 18px;
+}
+
+.header__theme-button_type_light {
+  font-weight: 700;
+}
+
+/*.header__theme-button_is-active::after {
+СДЕЛАТЬ КАК У OLD IDEA
+}*/
+
+/*creative-approach*/
+
+.content__title {
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
+  background-color: var(--accent-color);
+  padding: 0 4px 0 4px;
+  margin-right: 1px;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/*card-deck*/ /*ЧТО С КАРТИНКОЙ???*/
+
+.content__figure {
+  margin-right: 7%;
+  margin-left: 7%;
+  width: calc(100% + (5vi + 5vi));
+  position: relative;
+  right: 10vi;
+}
+
+.content__picture {
+  width: inherit;
+}
+
+.content__picture-caption {
+  border-bottom: 1px solid var(--text-color);
+  padding: 20px 0 20px 0;
+  text-align: center;
+}
+
+/*how-it-works*/
+
+.how-it-works__link {
+  color: inherit;
+}
+
+.content__blockquote {
+  font-style: italic;
+  line-height: 200%;
+  width: 75%;
+  text-align: left;
+  margin-bottom: 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content__card {
+  aspect-ratio: 4/3;
+  margin-top: 7%;
+  border: 1px solid currentColor;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__card-title {
+  font-size: 60px;
+  position: relative;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+}
+
+.colored-text::after {
+  content: "";
+  position: absolute;
+  width: 55%;
+  left: 47%;
+  top: 53%;
+  height: 0.3em;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/*who used*/
+
+.content__list {
+  list-style-type: none;
+  position: relative;
+}
+
+.content__list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.content__list-item::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  left: 1%;
+  top: 3%;
+  position: absolute;
+  background-image: url(../images/marker-light.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*footer*/
+
+.footer {
+  margin-top: 10%;
+  padding: 2.5%;
+  border-top: 1px solid var(--text-color);
+}
+
+.footer__copyright {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 18px;
+}
