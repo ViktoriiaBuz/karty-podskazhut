@@ -42,7 +42,7 @@ button:focus {
 
 .theme_dark {
   --bg-color: #171717;
-  --text-color: #B3B3B3;
+  --text-color: #b3b3b3;
   --accent-color: transparent;
 }
 
@@ -94,11 +94,11 @@ button:focus {
   font-family: inherit;
   color: currentColor;
   font-size: 18px;
+  border-bottom: 1px solid transparent;
 }
 
 .header__theme-button:hover {
-  /*outline и text-decartion не подходят, что тут?*/
-  outline: 1px solid rgba(49, 42, 78, 0.5);
+  border-bottom: 1px solid rgba(49, 42, 78, 0.5);
 }
 
 .header__theme-button_is-active:hover {
@@ -110,8 +110,7 @@ button:focus {
 }
 
 .theme_dark .header__theme-button:hover {
-  /*outline и text-decartion не подходят, что тут?*/
-  outline: 1px solid rgba(179, 179, 179, 0.50);
+  border-bottom: 1px solid rgba(179, 179, 179, 0.5);
 }
 
 .theme_dark .header__theme-button_is-active:hover {
@@ -165,8 +164,9 @@ button:focus {
   font-weight: 700;
 }
 
-.theme_dark .content__text-block_type_first-lettered
-> .content__paragraph:first-child::first-letter {
+.theme_dark
+  .content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
   border: 1px solid currentColor;
 }
 
@@ -202,7 +202,7 @@ button:focus {
 }
 
 .theme_dark .how-it-works__link:hover {
-  text-decoration-color: rgba(179, 179, 179, 0.50);
+  text-decoration-color: rgba(179, 179, 179, 0.5);
 }
 
 .theme_dark .how-it-works__link:focus-visible {
@@ -235,6 +235,11 @@ button:focus {
   position: relative;
 }
 
+.colored-text {
+  position: relative;
+  display: inline-block;
+}
+
 .content__card-subtitle {
   font-size: 18px;
 }
@@ -242,9 +247,9 @@ button:focus {
 .colored-text::after {
   content: "";
   position: absolute;
-  width: 54%;
-  left: 47%;
-  top: 53%;
+  width: 100%;
+  left: 0;
+  bottom: 0.1em;
   height: 0.3em;
   background-color: var(--accent-color);
   z-index: -1;
@@ -253,9 +258,9 @@ button:focus {
 .theme_dark .colored-text::after {
   content: "";
   position: absolute;
-  width: 54%;
-  left: 47%;
-  top: 53%;
+  width: 100%;
+  left: 0;
+  bottom: 0.1em;
   height: 0.3em;
   background-image: url(../images/pattern.svg);
   z-index: -1;
@@ -278,8 +283,10 @@ button:focus {
   content: "";
   width: 15px;
   height: 15px;
-  left: -2%;
-  top: 9%;
+  left: 0;
+  top: 50%;
+  margin-top: -7.5px;
+  margin-left: -25px;
   position: absolute;
   background-image: url(../images/marker-light.svg);
   background-position: center;
