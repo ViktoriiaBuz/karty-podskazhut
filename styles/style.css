@@ -97,11 +97,27 @@ button:focus {
   border-bottom: 1px solid transparent;
 }
 
+.header__theme-button:disabled {
+  pointer-events: none;
+}
+
+.theme_dark .header__theme-button:disabled {
+  pointer-events: none;
+}
+
 .header__theme-button:hover {
   border-bottom: 1px solid rgba(49, 42, 78, 0.5);
 }
 
+.theme_dark .header__theme-button:hover {
+  border-bottom: 1px solid rgba(179, 179, 179, 0.5);
+}
+
 .header__theme-button_is-active:hover {
+  outline: none;
+}
+
+.theme_dark .header__theme-button_is-active:hover {
   outline: none;
 }
 
@@ -109,19 +125,11 @@ button:focus {
   outline: 1px solid var(--text-color);
 }
 
-.theme_dark .header__theme-button:hover {
-  border-bottom: 1px solid rgba(179, 179, 179, 0.5);
-}
-
-.theme_dark .header__theme-button_is-active:hover {
-  outline: none;
-}
-
 .theme_dark .header__theme-button:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
-.header__theme-button_type_light {
+.header__theme-button_is-active {
   font-weight: 700;
 }
 
@@ -247,8 +255,8 @@ button:focus {
 .colored-text::after {
   content: "";
   position: absolute;
-  width: 100%;
-  left: 0;
+  width: calc(100% + 8px);
+  left: 4px;
   bottom: 0.1em;
   height: 0.3em;
   background-color: var(--accent-color);
@@ -298,8 +306,10 @@ button:focus {
   content: "";
   width: 15px;
   height: 15px;
-  left: -2%;
-  top: 9%;
+  left: 0;
+  top: 50%;
+  margin-top: -7.5px;
+  margin-left: -25px;
   position: absolute;
   background-image: url(../images/marker-dark.svg);
   background-position: center;
