@@ -95,6 +95,7 @@ button:focus {
   color: currentColor;
   font-size: 18px;
   border-bottom: 1px solid transparent;
+  position: relative;
 }
 
 .header__theme-button:disabled {
@@ -136,9 +137,9 @@ button:focus {
 .header__theme-button_is-active::after {
   content: "";
   position: absolute;
-  width: 53%;
-  left: 50%;
-  top: 59%;
+  width: 105%;
+  left: 0;
+  bottom: 20%;
   height: 0.3em;
   background-color: var(--accent-color);
   z-index: -1;
