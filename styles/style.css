@@ -30,9 +30,9 @@ figure {
 }
 
 .page {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--main-font);
+  background-color: var(--bg-color, #f3efec);
+  color: var(--text-color, #312a4e);
+  font-family: var(--main-font, Raleway);
 }
 
 a,
@@ -51,7 +51,7 @@ button:focus {
 }
 
 .heading {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "STIX Two Text");
   font-style: normal;
   font-weight: 600;
   line-height: 90%; /* 108px */
@@ -74,8 +74,8 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--text-color);
-  border-bottom: 1px solid var(--text-color);
+  border-top: 1px solid var(--text-color, #312a4e);
+  border-bottom: 1px solid var(--text-color, #312a4e);
 }
 
 .header__theme-toggler {
@@ -123,11 +123,11 @@ button:focus {
 }
 
 .header__theme-button:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #312a4e);
 }
 
 .theme_dark .header__theme-button:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #b3b3b3);
 }
 
 .header__theme-button_is-active {
@@ -141,7 +141,7 @@ button:focus {
   left: 0;
   bottom: 20%;
   height: 0.3em;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   z-index: -1;
 }
 
@@ -165,7 +165,7 @@ button:focus {
 
 .content__text-block_type_first-lettered
   > .content__paragraph:first-child::first-letter {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   padding: 0 4px 0 4px;
   margin-right: 1px;
   display: inline-block;
@@ -192,7 +192,7 @@ button:focus {
 }
 
 .content__picture-caption {
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color, #312a4e);
   padding: 20px 0 20px 0;
   text-align: center;
   font-size: 18px;
@@ -202,12 +202,16 @@ button:focus {
   color: inherit;
 }
 
+.theme_dark .how-it-works__link {
+  color: inherit;
+}
+
 .how-it-works__link:hover {
   text-decoration-color: rgba(49, 42, 78, 0.5);
 }
 
 .how-it-works__link:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #312a4e);
 }
 
 .theme_dark .how-it-works__link:hover {
@@ -215,7 +219,7 @@ button:focus {
 }
 
 .theme_dark .how-it-works__link:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #b3b3b3);
 }
 
 .content__blockquote {
@@ -260,15 +264,15 @@ button:focus {
   left: 4px;
   bottom: 0.1em;
   height: 0.3em;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   z-index: -1;
 }
 
 .theme_dark .colored-text::after {
   content: "";
   position: absolute;
-  width: 100%;
-  left: 0;
+  width: calc(100% + 8px);
+  left: 4px;
   bottom: 0.1em;
   height: 0.3em;
   background-image: url(../images/pattern.svg);
@@ -321,11 +325,11 @@ button:focus {
 .footer {
   margin-top: 10%;
   padding: 2.5%;
-  border-top: 1px solid var(--text-color);
+  border-top: 1px solid var(--text-color, #312a4e);
 }
 
 .footer__copyright {
   text-align: center;
-  color: var(--text-color);
+  color: var(--text-color, #312a4e);
   font-size: 18px;
 }
